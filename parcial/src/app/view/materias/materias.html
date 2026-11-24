@@ -1,0 +1,10 @@
+<h2>Materias Ingeniería de Sistemas</h2>
+
+@if (cargando) {
+  <p>Cargando...</p>
+} @else if (error) {
+  <p style="color: red;">{{ error }}</p>
+} @else {
+  <!-- Llamamos a tu tabla y le pasamos los datos -->
+  <app-reusable-table [dataSource]="materias"></app-reusable-table>
+}

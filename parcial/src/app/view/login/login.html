@@ -1,0 +1,35 @@
+<div class="login-wrapper">
+  <mat-card class="login-card">
+    
+    <div class="login-header">
+      <mat-icon class="logo">school</mat-icon>
+      <h2>Iniciar Sesión</h2>
+      <p>Ingeniería de Sistemas</p>
+    </div>
+
+    <mat-card-content>
+      <form (ngSubmit)="login()">
+        
+        <!-- Campo Correo -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput type="email" [(ngModel)]="email" name="email" required placeholder="admin@correo.com">
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+
+        <!-- Campo Contraseña -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" [(ngModel)]="password" name="password" required placeholder="******">
+          <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+
+        <!-- Botón -->
+        <button mat-raised-button color="primary" type="submit" class="btn-login" [disabled]="cargando || !email || !password">
+          {{ cargando ? 'Validando...' : 'Ingresar' }}
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
